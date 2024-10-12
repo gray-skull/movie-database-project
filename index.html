@@ -1,0 +1,83 @@
+<!--
+ * Project Overview: Movie Database Website
+ * 
+ * Purpose:
+ * The website allows users to add, view, edit, and delete movies, including details like title, genre, and rating.
+ * 
+ * Pages:
+ * 1. Home Page: Introduction and navigation links (Header, NavBar, Main Section, Footer).
+ * 2. Movies List Page: Displays movie list fetched from MySQL (structured) and MongoDB (unstructured) databases.
+ * 3. Add Movie Page: Form to add new movies (HTML form validation via JavaScript).
+ * 4. Edit Movie Page: Edit existing movie details (Form validation and Fetch API to update movie).
+ * 5. Movie Details Page: Shows detailed information of selected movie (with MongoDB user reviews).
+ * 
+ * Backend:
+ * - Node.js server handles routing and database queries.
+ * - MySQL stores structured data (movie details).
+ * - MongoDB stores additional data (user reviews and tags).
+ * 
+ * JavaScript Usage:
+ * - Form validation (HTML5 and JavaScript).
+ * - Interactive features (dynamic movie filtering, Fetch API for updates).
+ * 
+ * CSS Usage:
+ * - Responsive design for different devices.
+ * - Consistent layout, animations, and hover effects for user experience.
+-->
+
+<!-- Home Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="content">
+        <aside id="sidebar"></aside>
+        <main> 
+            <section>
+                <h2>Welcome!</h2>
+                <p>Explore our movie database or add your favorite movies!</p>
+            </section>
+
+            <section>
+                <h2>Featured Movies</h2>
+                <p><em>Placeholder movies (will be replaced by MySQL and MongoDB code)</em></p>
+                <div class="movie-list">
+                    <div class="movie">
+                        <img src="images/movie1.webp" alt="Movie 1">
+                        <h3>Movie 1</h3>
+                        <p>Genre: Action</p>
+                        <p>Rating: 4.5</p>
+                    </div>
+                    <div class="movie">
+                        <img src="images/movie2.webp" alt="Movie 2">
+                        <h3>Movie 2</h3>
+                        <p>Genre: Comedy</p>
+                        <p>Rating: 4.0</p>
+                    </div>
+                    <div class="movie">
+                        <img src="images/movie3.webp" alt="Movie 3">
+                        <h3>Movie 3</h3>
+                        <p>Genre: Drama</p>
+                        <p>Rating: 4.2</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer id="footer"></footer>
+
+    
+</body>
+</html>
