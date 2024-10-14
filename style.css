@@ -5,15 +5,43 @@
 
 #mobile-nav {
     display: none;
-    margin-top: 0px;
+    margin: 10px auto 0px auto;
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
     height: 40px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+#mobile-nav.content
+
+#logo {
+    position: relative;
+    padding: 0px auto;
+    margin: 0px auto;
+}
+
+#searchBar {
+    position: relative;
+    right: 0;
+    height: 40px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0px 0px 0px auto;
+    padding: 10px 0px 0px 0px;
+}
+
+#searchBar input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 700px) {
     #sidebar {
         display: none;
     }
@@ -22,12 +50,65 @@
         display: block;
     }
     
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+    #searchBar {
+        margin: 0px auto;
+        max-width: 300px;
     }
+}
+
+#header {
+    width: auto;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 10px;
+}
+
+#header div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-end;
+}
+
+#header h1 {
+    margin: 0 auto 0 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+}
+
+#header p {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0;
+}
+
+#sidebar {
+    height: auto;
+    padding: 10px 20px;
+    margin: 0px;
+    max-width: 130px;
+    min-width: 130px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+#sidebar button {
+    width: 100%;
+    padding: 20px;
+    margin: 5px auto;
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#sidebar button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .html {
@@ -78,69 +159,10 @@ body {
     box-sizing: border-box;
 }
 
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    width: auto;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
-    box-sizing: border-box;
-}
-header div {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-}
-
-header p {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 0;
-}
-
 main {
     padding: 20px;
     border-radius: 5px;
     box-sizing: border-box;
-}
-
-#sidebar {
-    height: auto;
-    padding: 10px 20px;
-    margin: 20px;
-    max-width: 130px;
-    min-width: 130px;
-    background-color: var(--secondary-color);
-    border-radius: 5px;
-}
-
-#sidebar button {
-    width: 100%;
-    padding: 20px;
-    margin: 5px auto;
-    background-color: white;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#sidebar button:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
 }
 
 footer {
@@ -170,7 +192,7 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
 }
 
 h2 {
