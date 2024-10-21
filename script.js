@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const movieID = urlParams.get('id');
 
-    function (fetchMovieDetails(id) {
+    function fetchMovieDetails(id) {
         fetch(``)
         .then(response => respponse.json())
         .then(data => {
