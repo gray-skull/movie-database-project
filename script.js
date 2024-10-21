@@ -74,5 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Error:', error));
         });
-    }
+    } else {
+        console.error('Form not found on the page.');
 });
