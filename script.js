@@ -23,26 +23,13 @@ function loadFooter() {
 }
 
 function loadSidebar() {
-console.log('Loading sidebar...');
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('partials/sidebar.html')
-        .then(response => {
-            console.log('Sidebar response status:', response.status);
-            return response.text();
-        })
-        .then(data => {
-            const sidebar = document.getElementById('sidebar');
-            if (sidebar) {
-                sidebar.innerHTML = data;
-                console.log('Sidebar loaded successfully.');
-            } else {
-                console.error('Sidebar element not found.');
-            }
-        })
-        .catch(error => {
-            console.error('Error loading sidebar:', error);
-        });
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('partials/sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar').innerHTML = data;
+            });
+    });
 }
 
 function navigateToPage() {
