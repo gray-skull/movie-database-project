@@ -67,3 +67,39 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('add-movie-form');
+
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(form);
+            const movieData = {
+                title: formData.get('title'),
+                genre: formData.get('genre'),
+                releaseYear: formData.get('release-year'),
+                rating: formData.get('rating')
+            };
+
+            fetch('/add-movie', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(movieData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Movie added successfully!');
+                    form.reset(); // Clear the form fields
+                } else {
+                    alert(data.message || 'Error adding movie. Please try again.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    }
+});
