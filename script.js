@@ -27,7 +27,7 @@ function loadSidebar() {
         fetch('partials/sidebar.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('sidebar').innerHTML = data;
+                const sidebar = document.getElementById('sidebar');
             });
     });
 }
