@@ -11,7 +11,7 @@ app.post('/add-movie', (req, res) => {
     const { title, genre, releaseYear, rating } = req.body;
 
     if (!title || !genre || !releaseYear || !rating) {
-        return res.json({ success: false, message: 'All fields are required' });
+        return res.status(400).json({ success: false, message: 'All fields are required' });
     }
 
     const newMovie = { title, genre, releaseYear, rating };
