@@ -88,3 +88,64 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('edit-movie-form');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieID = urlParams.get('id');
+
+    function (fetchMovieDetails(id) {
+        fetch(``)
+        .then(response => respponse.json())
+        .then(data => {
+            document.getElementById('title').value = data.title;
+            document.getElementById('genre').value = data.genre;
+            document.getElementById('release-year').value = data.releaseYear;
+            document.getElementById('rating').value = data.rating;
+        })
+        .catch(error => console.error('Error fetching movie details:', error));
+    }
+    if (movieID) {
+        fetchMovieDetails(movieId);
+    }
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const updatedMovie = {
+                title: formData.get('title'),
+                genre: formData.get('genre'),
+                releaseYear: formData.get('release-year'),
+                rating: formData.get('rating')
+            };
+
+            fetch(``, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedMovie)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    console.error(`Server Error: ${response.status}`);
+                    throw new Error (`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success){
+                    alert('Movie updated successfully');
+                } else {
+                    alert(data.message || 'Error updating movie. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    } else {
+        console.error('Form not found on the page.');
+    }
+});
