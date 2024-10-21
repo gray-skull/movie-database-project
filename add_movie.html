@@ -21,7 +21,33 @@
                 <p>Fill out the form below to add a movie to the database.</p>
 
                 <!-- form for adding a movie.  Implemented with HTML, JS, node.js.-->
+                <form id = "add-movie-form">
+                    <label for = "title">Movie Title:</label>
+                    <input type = "text" id = "title" name = "title" placeholder = "Enter movie title" required>
 
+                    <label for = "genre">Genre:</label>
+                    <select id = "genre" name = "genre" required>
+                        <option value = "action">Action</option>
+                        <option value = "comedy">Comedy</option>
+                        <option value = "drama">Drama</option>
+                        <option value = "thriller">Thriller</option>
+                        <option value = "western">Western</option>
+                        <option value = "horror">Horror</option>
+                        <option value = "adventure">Adventure</option>
+                        <option value = "romance">Romance</option>
+                        <option value = "fantasy">Fantasy</option>
+                        <option value = "romcom">Romantic Comedy</option>
+                    </select>
+
+                    <label for = "release-year">Release Year:</label>
+                    <input type = "number" id = "release-year" name = "release-year" min = "1900" max = "2024" placeholder = "Enter release year" required>
+
+                    <label for = "rating">Rating:</label>
+                    <input type = "number" id = "rating" name = "rating" step = "0.1" min = "0" max = "10" placeholder = "Enter rating (0-10)" required>
+
+                    <button type = "submit">Add Movie</button>
+                    <button type = "reset">Clear Form</button>
+                </form>
 
             </main>
         </div>
