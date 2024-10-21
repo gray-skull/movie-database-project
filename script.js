@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (form) {
         form.addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent the default form submission
 
             const formData = new FormData(form);
             const movieData = {
@@ -63,17 +63,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 body: JSON.stringify(movieData)
             })
-            .then(response => response.json())
+            .then(response => {
+                // Check if the response is okay (status 200-299)
+                if (!response.ok) {
+                    console.error(`Server Error: ${response.status}`);
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.success) {
                     alert('Movie added successfully!');
-                    form.reset();
+                    form.reset(); // Clear the form fields
                 } else {
                     alert(data.message || 'Error adding movie. Please try again.');
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('Error:', error);
+            });
         });
     } else {
         console.error('Form not found on the page.');
+    }
 });
+
