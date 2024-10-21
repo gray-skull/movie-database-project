@@ -149,3 +149,21 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Form not found on the page.');
     }
 });
+
+app.put('/movies/:id', (req, res) => {
+    const { id } = req.params;
+    const { title, genre, releaseYear, rating } = req.body;
+
+    if (!title || !genre || !releaseYear || !rating) {
+        return res.status(400).json({ success: false, message: 'All fields are required' });
+    }
+
+    const movieIndex = movies.findIndex(movie => movie.id === id);
+
+    if (movieIndex !== -1) {
+        movies[movieIndex] = { id, title, genre, releaseYear, rating };
+        return res.json({ success: true, message: 'Movie updated successfully', movie: movies[movieIndex] });
+    } else {
+        return res.status(404).json({ success: false, message: 'Movie not found' });
+    }
+});
