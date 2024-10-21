@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function(){
         form.addEventListener('submit' , function(event) {
             const title = document.getElementById('title').value;
             const releaseYear = document.getElementById('release-year').value;
-            const rating = document.getElementById('rating).value;
+            const rating = document.getElementById('rating').value;
 
             if (title.length < 2) {
                 alert('Movie title must be at least 2 characters long');
