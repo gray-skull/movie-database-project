@@ -41,39 +41,12 @@ function navigateToPage() {
 }
 
 //Form validation for the add_movie
-document.addEventListener('DOMContentLoaded', function(){
-    const form = document.getElementById('add-movie-form');
-
-    if (form) {
-        form.addEventListener('submit' , function(event) {
-            const title = document.getElementById('title').value;
-            const releaseYear = document.getElementById('release-year').value;
-            const rating = document.getElementById('rating').value;
-
-            if (title.length < 2) {
-                alert('Movie title must be at least 2 characters long');
-                event.preventDefault();
-            }
-
-            if (releaseYear < 1900 || releaseYear > new Date().getFullYear()) {
-                alert(`Release year must be between 1900 and ${new Date().getFullYear()}`);
-                event.preventDefault();
-            }
-
-            if (rating < 0 || rating > 10) {
-                alert('Rating must be between 0 and 10');
-                event.preventDefault;
-            }
-        });
-    }
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('add-movie-form');
 
     if (form) {
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault();
 
             const formData = new FormData(form);
             const movieData = {
@@ -94,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 if (data.success) {
                     alert('Movie added successfully!');
-                    form.reset(); // Clear the form fields
+                    form.reset();
                 } else {
                     alert(data.message || 'Error adding movie. Please try again.');
                 }
