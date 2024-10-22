@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const movieData = {
                 title: formData.get('title'),
                 genre: formData.get('genre'),
-                releaseYear: formData.get('release-year'),
+                releaseYear: formData.get('releaseYear'),
                 rating: formData.get('rating')
             };
 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             document.getElementById('title').value = data.title;
             document.getElementById('genre').value = data.genre;
-            document.getElementById('release-year').value = data.releaseYear;
+            document.getElementById('releaseYear').value = data.releaseYear;
             document.getElementById('rating').value = data.rating;
         })
         .catch(error => console.error('Error fetching movie details:', error));
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const updatedMovie = {
                 title: formData.get('title'),
                 genre: formData.get('genre'),
-                releaseYear: formData.get('release-year'),
+                releaseYear: formData.get('releaseYear'),
                 rating: formData.get('rating')
             };
 
