@@ -206,7 +206,7 @@ app.get('/movies/:title', async(req, res) => {
     }
 });
 
-
+// local server
 app.listen(PORT, async () => {
     try {
         await mongoDbConnect();
@@ -216,3 +216,4 @@ app.listen(PORT, async () => {
         console.log(error.message);
     }
 });
+
