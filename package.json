@@ -1,18 +1,21 @@
 {
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongodb": "^6.10.0"
+    "method-override": "^3.0.0",
+    "mongodb": "^6.10.0",
+    "mysql2": "^3.11.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7",
-    "mongoose": "^8.7.2"
+    "mongoose": "^8.7.2",
+    "nodemon": "^3.1.7"
   },
   "name": "movie-database-project",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "./public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

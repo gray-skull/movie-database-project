@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flix Db | Add Movie</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header id="header"></header>
+        <div class="content">
+            <aside id="sidebar"></aside>
+
+            <main>
+                <h2>Add Movie</h2>
+                <p>Fill out the form below to add a movie to the database.</p>
+
+                <!-- form for adding a movie.  Implemented with HTML, JS, node.js.-->
+                <form id = "add-movie-form" name="add-movie-form" action = "/movies" method = "POST">
+                    <label for = "title">Movie Title: (Required)</label>
+                    <input type = "text" id = "title" name = "title" placeholder = "Enter movie title" required>
+
+                    <label for = "genre">Genre: (Required)</label>
+                    <select id = "genre" name = "genre" required>
+                        <option value = "">Select a genre</option>
+                        <option value = "Action">Action</option>
+                        <option value = "Comedy">Comedy</option>
+                        <option value = "Drama">Drama</option>
+                        <option value = "Thriller">Thriller</option>
+                        <option value = "Western">Western</option>
+                        <option value = "Horror">Horror</option>
+                        <option value = "Adventure">Adventure</option>
+                        <option value = "Romance">Romance</option>
+                        <option value = "Fantasy">Fantasy</option>
+                        <option value = "Romantic Comedy">Romantic Comedy</option>
+                    </select>
+
+                    <label for = "releaseYear">Release Year: (Required)</label>
+                    <input type = "number" id = "releaseYear" name = "releaseYear" min = "1900" max = "2024" placeholder = "Enter release year" required>
+
+                    <label for = "rating">Rating: (Required)</label>
+                    <input type = "number" id = "rating" name = "rating" step = "0.1" min = "0" max = "10" placeholder = "Enter rating (0-10)" required>
+                    
+                    <label for = "image">Image URL:</label>
+                    <input type = "url" id = "image" name = "image" placeholder = "http://www.example.com/img.jpg">
+
+                    <label for = "summary">Summary:</label>
+                    <textarea id = "summary" name = "summary" placeholder = "Enter movie summary"></textarea>
+                    
+                    <button type = "submit">Add Movie</button>
+                    <button type = "reset">Clear Form</button>
+                </form>
+
+            </main>
+        </div>
+
+        <footer id="footer"></footer>
+
+        
+    </body>
+</html>

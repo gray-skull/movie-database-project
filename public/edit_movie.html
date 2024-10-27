@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flix Db | Edit Movie</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="/favicon/favicon-48x48.png" sizes="48x48" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header id="header"></header>
+        <div class="content">
+            <aside id="sidebar"></aside>
+
+            <main>
+                <h2>Edit Movie</h2>
+                <form id = "edit-movie-form" name="edit-movie-form" method = "POST" action = "/movies/:editTitle?_method=PUT" >
+                    <h3>Enter Movie Title to Edit:</h3>
+                    <label for = "editTitle">Movie Title: (Required)</label>
+                    <input type = "text" id = "editTitle" name= "editTitle" placeholder = "Existing Movie Title" required>
+                    
+                    <h3>Enter New Details:</h3>
+                    <label for = "newTitle">Movie Title:</label>
+                    <input type = "text" id = "newTitle" name="newTitle" placeholder = "New Movie Title">
+
+                    <label for = "newGenre">Genre:</label>
+                    <select id = "newGenre" name="newGenre">
+                        <option value = "">Select a New Genre</option>
+                        <option value = "Action">Action</option>
+                        <option value = "Comedy">Comedy</option>
+                        <option value = "Drama">Drama</option>
+                        <option value = "Thriller">Thriller</option>
+                        <option value = "Western">Western</option>
+                        <option value = "Horror">Horror</option>
+                        <option value = "Adventure">Adventure</option>
+                        <option value = "Romance">Romance</option>
+                        <option value = "Fantasy">Fantasy</option>
+                        <option value = "Romantic Comedy">Romantic Comedy</option>
+                    </select>
+
+                    <label for = "newReleaseYear">Release Year:</label>
+                    <input type = "number" id = "newReleaseYear" name="newReleaseYear" min = "1900" max = "2024" placeholder = "New Release Year">
+
+                    <label for = "newRating">Rating:</label>
+                    <input type = "number" id = "newRating" name="newRating" step = "0.1" min = "0" max = "10" placeholder = "New Rating (0-10)">
+                    
+                    <label for = "newImage">Image URL:</label>
+                    <input type = "url" id = "newImage" name="newImage" placeholder = "New Image (e.g. http://www.example.com/img.jpg)">
+                    
+                    <lable for = "newSummary">Summary:</label>
+                    <textarea id = "newSummary" name="newSummary" placeholder = "New Summary"></textarea>
+
+                    <button type = "submit">Edit Movie</button>
+                    <button type = "reset">Clear Form</button>
+                </form>
+            </main>
+        </div>
+
+        <footer id="footer"></footer>
+
+        
+    </body>
+</html>

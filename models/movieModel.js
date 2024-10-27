@@ -18,6 +18,14 @@ const movieSchema = new mongoose.Schema(
         rating: {
             type: Number,
             required: [true, 'Rating is required']
+        },
+        image: {
+            type: String,
+            required: false
+        },
+        summary: {
+            type: String,
+            required: false
         }
     },
     {
